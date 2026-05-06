@@ -5,7 +5,10 @@ pubDate: 2026-05-06
 tags: ["投资", "A股", "经济"]
 category: "投资"
 draft: false
+ogImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop"
 ---
+
+![股市走势](https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=500&fit=crop)
 
 ## 当前整体格局
 

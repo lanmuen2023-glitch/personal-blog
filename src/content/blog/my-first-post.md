@@ -5,7 +5,10 @@ pubDate: 2026-05-06
 tags: ["博客", "日常"]
 category: "生活"
 draft: false
+ogImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=630&fit=crop"
 ---
+
+![写作工作台](https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=500&fit=crop)
 
 ## 关于这个博客
 

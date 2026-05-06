@@ -11,11 +11,11 @@ interface Props {
 
 const { title, description, ogImage } = Astro.props;
 const pageUrl = new URL(Astro.url.pathname, SITE.url).href;
-const imageUrl = ogImage ?? `${SITE.url}/og-default.png`;
+const imageUrl = ogImage ?? `${SITE.url}/og-default.svg`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

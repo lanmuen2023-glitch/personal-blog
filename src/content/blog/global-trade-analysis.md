@@ -5,7 +5,10 @@ pubDate: 2026-05-06
 tags: ["外贸", "出海", "经济"]
 category: "投资"
 draft: false
+ogImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1200&h=630&fit=crop"
 ---
+
+![全球贸易港口](https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1200&h=500&fit=crop)
 
 ## 大背景：全球贸易正在重构
 

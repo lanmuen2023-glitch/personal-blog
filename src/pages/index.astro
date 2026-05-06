@@ -13,7 +13,19 @@ const sorted = posts.sort(
 ---
 
 <Layout title="Home" description={SITE.description}>
-  <h1 class="text-3xl font-bold mb-8">{SITE.title}</h1>
+  <!-- 个人介绍区 -->
+  <section class="mb-12 pb-8 border-b border-gray-200 dark:border-gray-800">
+    <h1 class="text-4xl font-bold mb-3">{SITE.title}</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+      {SITE.description}
+    </p>
+    <p class="text-sm text-gray-500 dark:text-gray-500 mt-4">
+      记录投资思考、外贸观察与生活感悟。
+    </p>
+  </section>
+
+  <!-- 文章列表 -->
+  <h2 class="text-2xl font-semibold mb-6">最新文章</h2>
   <div class="space-y-6">
     {sorted.map((post) => <PostCard post={post} />)}
   </div>
