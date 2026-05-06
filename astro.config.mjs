@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://yourdomain.vercel.app",
+  site: "https://personal-blog-six-sigma.vercel.app",
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

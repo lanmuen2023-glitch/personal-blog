@@ -1,8 +1,8 @@
 export const SITE = {
-  title: "À¶ãå¶÷µÄ¸öÈË²©¿Í",
-  description: "¹ØÓÚÑ§Ï°¡¢Éú»î¡¢ÉãÓ°¡¢ÎÄÑ§¡¢Ë¼¿¼",
-  url: "https://yourdomain.vercel.app",
-  author: "À¶ãå¶÷",
+  title: "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½Ë²ï¿½ï¿½ï¿½",
+  description: "ï¿½ï¿½ï¿½ï¿½Ñ§Ï°ï¿½ï¿½ï¿½ï¿½ï¿½î¡¢ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½Ë¼ï¿½ï¿½",
+  url: "https://personal-blog-six-sigma.vercel.app",
+  author: "ï¿½ï¿½ï¿½ï¿½ï¿½",
   locale: "zh-CN",
 } as const;
 
