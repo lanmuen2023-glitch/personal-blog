@@ -1,0 +1,61 @@
+---
+import Header from "./Header.astro";
+import { SITE } from "../consts";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+const pageUrl = new URL(Astro.url.pathname, SITE.url).href;
+const imageUrl = ogImage ?? `${SITE.url}/og-default.png`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | {SITE.title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={`${title} | ${SITE.title}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE.title}
+      href="/rss.xml"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <script>
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const stored = localStorage.getItem("theme");
+      if (stored === "dark" || (!stored && prefersDark)) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors"
+  >
+    <Header />
+    <main class="mx-auto max-w-3xl px-4 py-8">
+      <slot />
+    </main>
+    <footer
+      class="mx-auto max-w-3xl px-4 py-8 text-center text-sm text-gray-500"
+    >
+      <p>&copy; {new Date().getFullYear()} {SITE.author}. Built with Astro.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+---
+import Layout from "../components/Layout.astro";
+import PostCard from "../components/PostCard.astro";
+import { getCollection } from "astro:content";
+import { SITE } from "../consts";
+
+const posts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
+const sorted = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout title="Home" description={SITE.description}>
+  <h1 class="text-3xl font-bold mb-8">{SITE.title}</h1>
+  <div class="space-y-6">
+    {sorted.map((post) => <PostCard post={post} />)}
+  </div>
+</Layout>

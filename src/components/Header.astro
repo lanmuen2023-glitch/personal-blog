@@ -1,0 +1,36 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+import { SITE } from "../consts";
+---
+
+<header
+  class="mx-auto max-w-3xl px-4 py-6 flex items-center justify-between"
+>
+  <a href="/" class="text-xl font-bold hover:underline">{SITE.title}</a>
+  <nav class="flex items-center gap-4">
+    <a href="/" class="hover:underline">Home</a>
+    <a href="/tags" class="hover:underline">Tags</a>
+    <a
+      href="/rss.xml"
+      class="hover:underline"
+      title="RSS Feed"
+      aria-label="RSS Feed"
+    >
+      <svg
+        class="h-4 w-4 inline"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 5c10.493 0 19 8.507 19 19M6 13c6.067 0 11 4.933 11 11M6 21a3 3 0 110-6 3 3 0 010 6z"
+        />
+      </svg>
+    </a>
+    <ThemeToggle />
+  </nav>
+</header>

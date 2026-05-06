@@ -1,0 +1,35 @@
+---
+// Replace these with your own values from https://giscus.app
+const GISCUS = {
+  repo: "your-username/your-repo",
+  repoId: "R_kgXXXXXXXXX",
+  category: "Announcements",
+  categoryId: "DIC_XXXXXXXXX",
+};
+---
+
+<section class="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
+  <h2 class="text-xl font-bold mb-4">Comments</h2>
+  <div class="giscus"></div>
+</section>
+
+<script>
+  const isDark = document.documentElement.classList.contains("dark");
+  const script = document.createElement("script");
+  script.src = "https://giscus.app/client.js";
+  script.setAttribute("data-repo", "your-username/your-repo");
+  script.setAttribute("data-repo-id", "R_kgXXXXXXXXX");
+  script.setAttribute("data-category", "Announcements");
+  script.setAttribute("data-category-id", "DIC_XXXXXXXXX");
+  script.setAttribute("data-mapping", "pathname");
+  script.setAttribute("data-strict", "0");
+  script.setAttribute("data-reactions-enabled", "1");
+  script.setAttribute("data-emit-metadata", "0");
+  script.setAttribute("data-input-position", "bottom");
+  script.setAttribute("data-theme", isDark ? "dark" : "light");
+  script.setAttribute("data-lang", "en");
+  script.setAttribute("data-loading", "lazy");
+  script.crossOrigin = "anonymous";
+  script.async = true;
+  document.querySelector(".giscus")?.appendChild(script);
+</script>

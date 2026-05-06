@@ -1,0 +1,32 @@
+---
+import Layout from "../../components/Layout.astro";
+import BlogPostLayout from "../../layouts/BlogPostLayout.astro";
+import Giscus from "../../components/Giscus.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => {
+    return import.meta.env.PROD ? !data.draft : true;
+  });
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<"blog"> };
+const { Content } = await post.render();
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  ogImage={post.data.ogImage}
+>
+  <BlogPostLayout post={post}>
+    <article class="prose dark:prose-invert max-w-none">
+      <Content />
+    </article>
+  </BlogPostLayout>
+  <Giscus />
+</Layout>
